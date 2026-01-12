@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Deteksi Trojan dan Malware</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f9fc;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a3a8f 0%, #2c5aa0 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid #ff6b6b;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #1a3a8f;
+            border-bottom: 2px solid #ff6b6b;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+        
+        h3 {
+            color: #2c5aa0;
+            margin: 1.5rem 0 0.8rem 0;
+        }
+        
+        ul, ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .warning {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffcc00;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .danger {
+            background-color: #ffe6e6;
+            border-left: 4px solid #ff6b6b;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .success {
+            background-color: #e6f7e6;
+            border-left: 4px solid #4CAF50;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .tip {
+            background-color: #e6f2ff;
+            border-left: 4px solid #1a3a8f;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .tool-item {
+            background: #f0f7ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #d1e3ff;
+        }
+        
+        .tool-item h4 {
+            color: #1a3a8f;
+            margin-bottom: 0.5rem;
+        }
+        
+        .symptoms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .symptom {
+            background: #fff5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        footer {
+            background-color: #1a3a8f;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+        }
+        
+        footer p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+        
+        .last-updated {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .tool-grid, .symptoms-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Panduan Deteksi Trojan dan Malware</h1>
+        <p>Pelajari cara mengenali tanda-tanda infeksi malware dan langkah-langkah pencegahannya</p>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <h2>Apa Itu Trojan dan Malware?</h2>
+            <p>Malware (perangkat lunak berbahaya) adalah program yang dirancang untuk merusak, mengganggu, atau mendapatkan akses tidak sah ke sistem komputer. Trojan adalah jenis malware yang menyamar sebagai program yang sah untuk menipu pengguna agar menginstalnya.</p>
+            
+            <div class="warning">
+                <h3>Perhatian!</h3>
+                <p>Trojan sering kali dikirim melalui email phishing, situs web berbahaya, atau disamarkan sebagai software gratis. Mereka dapat mencuri data sensitif, mengendalikan sistem, atau membuka pintu bagi malware lainnya.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Tanda-Tanda Infeksi Malware</h2>
+            <p>Berikut adalah gejala umum yang menunjukkan sistem Anda mungkin terinfeksi malware:</p>
+            
+            <div class="symptoms-grid">
+                <div class="symptom">
+                    <h4>🔍 Performa Lambat</h4>
+                    <p>Komputer tiba-tiba menjadi sangat lambat meski tidak menjalankan program berat.</p>
+                </div>
+                
+                <div class="symptom">
+                    <h4>⚠️ Pop-up Tidak Diinginkan</h4>
+                    <p>Muncul iklan pop-up terus menerus meski browser tidak dibuka.</p>
+                </div>
+                
+                <div class="symptom">
+                    <h4>🔄 Perubahan Tidak Diketahui</h4>
+                    <p>Pengaturan browser berubah, homepage berubah tanpa izin, atau program baru terinstal.</p>
+                </div>
+                
+                <div class="symptom">
+                    <h4>💾 Ruang Disk Menyusut</h4>
+                    <p>Ruang penyimpanan tiba-tiba penuh tanpa alasan yang jelas.</p>
+                </div>
+                
+                <div class="symptom">
+                    <h4>📶 Aktivitas Jaringan Tinggi</h4>
+                    <p>Indikator jaringan aktif terus menerus meski Anda tidak menggunakan internet.</p>
+                </div>
+                
+                <div class="symptom">
+                    <h4>❌ Program Keamanan Nonaktif</h4>
+                    <p>Antivirus atau firewall tiba-tiba dinonaktifkan dan tidak dapat diaktifkan kembali.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Cara Mendeteksi Trojan dan Malware</h2>
+            
+            <h3>1. Gunakan Antivirus Terpercaya</h3>
+            <p>Selalu gunakan software antivirus yang terpercaya dan update secara berkala. Lakukan scan penuh sistem secara rutin.</p>
+            
+            <h3>2. Monitor Aktivitas Jaringan</h3>
+            <p>Gunakan Task Manager (Windows) atau Activity Monitor (Mac) untuk melihat aplikasi apa yang menggunakan jaringan. Waspada jika ada aplikasi tidak dikenal yang menggunakan banyak bandwidth.</p>
+            
+            <h3>3. Periksa Program yang Berjalan</h3>
+            <p>Cek daftar program yang dijalankan saat startup. Trojan sering menambahkan diri mereka ke startup agar selalu aktif.</p>
+            
+            <h3>4. Scan dengan Anti-Malware Khusus</h3>
+            <p>Selain antivirus, gunakan tool anti-malware khusus seperti Malwarebytes untuk deteksi yang lebih komprehensif.</p>
+            
+            <h3>5. Periksa Extension Browser</h3>
+            <p>Periksa extension atau add-ons pada browser Anda. Hapus yang tidak dikenal atau tidak diinginkan.</p>
+            
+            <div class="danger">
+                <h3>Peringatan!</h3>
+                <p>Jika Anda menemukan file mencurigakan dengan nama seperti "svchost.exe" (di luar folder System32), "csrss.exe" (duplikat), atau file dengan nama acak di folder Temp, segera lakukan scan dengan antivirus.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Tool Deteksi Malware Gratis</h2>
+            <p>Berikut beberapa tool yang dapat membantu mendeteksi dan menghapus malware:</p>
+            
+            <div class="tool-grid">
+                <div class="tool-item">
+                    <h4>Malwarebytes</h4>
+                    <p>Anti-malware populer dengan kemampuan mendeteksi berbagai jenis ancaman termasuk trojan, ransomware, dan spyware.</p>
+                </div>
+                
+                <div class="tool-item">
+                    <h4>HitmanPro</h4>
+                    <p>Cloud-based scanner yang dapat mendeteksi malware yang disembunyikan oleh rootkit.</p>
+                </div>
+                
+                <div class="tool-item">
+                    <h4>AdwCleaner</h4>
+                    <p>Khusus membersihkan adware, toolbar yang tidak diinginkan, dan program yang mungkin tidak terdeteksi antivirus biasa.</p>
+                </div>
+                
+                <div class="tool-item">
+                    <h4>Windows Defender</h4>
+                    <p>Antivirus bawaan Windows yang sudah cukup baik dalam mendeteksi berbagai ancaman jika diupdate secara teratur.</p>
+                </div>
+                
+                <div class="tool-item">
+                    <h4>RKill</h4>
+                    <p>Tool untuk menghentikan proses malware yang mungkin mencegah antivirus berjalan dengan normal.</p>
+                </div>
+                
+                <div class="tool-item">
+                    <h4>Sophos Scan & Clean</h4>
+                    <p>Tool portable yang dapat digunakan tanpa instalasi untuk mendeteksi dan menghapus malware.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>Langkah Pencegahan</h2>
+            
+            <div class="success">
+                <h3>Tips Pencegahan Infeksi Malware:</h3>
+                <ol>
+                    <li>Selalu update sistem operasi dan semua software</li>
+                    <li>Jangan klik link atau lampiran email dari pengirim tidak dikenal</li>
+                    <li>Gunakan antivirus dan firewall yang selalu diupdate</li>
+                    <li>Hati-hati saat mendownload software dari internet</li>
+                    <li>Backup data penting secara rutin</li>
+                    <li>Gunakan password yang kuat dan berbeda untuk setiap akun</li>
+                    <li>Aktifkan fitur keamanan tambahan seperti 2FA (Two-Factor Authentication)</li>
+                </ol>
+            </div>
+            
+            <div class="tip">
+                <h3>Tip Penting:</h3>
+                <p>Selalu verifikasi keaslian software sebelum menginstalnya. Unduh hanya dari sumber resmi atau situs web pengembang yang terpercaya. Waspada terhadap software "gratis" yang meminta izin berlebihan.</p>
+            </div>
+        </div>
+        
+        <div class="last-updated">
+            <p><strong>Terakhir diperbarui:</strong> Oktober 2023 | <strong>Konten ini bersifat informatif dan statis</strong></p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Halaman Informasi Keamanan Siber</p>
+        <p>© 2023 Panduan Deteksi Malware. Untuk tujuan edukasi saja.</p>
+        <p>Jika sistem Anda terinfeksi malware, segera konsultasikan dengan profesional TI.</p>
+    </footer>
+</body>
+  </html>
